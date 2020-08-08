@@ -1,0 +1,10 @@
+{% if latest_quiz_list %}
+    <ul>
+    {% for quiz in latest_quiz_list %}
+        <li><a href="/quiz/{% url 'quiz' quiz.id %}/">{{
+            quiz.quiz_name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quizzes are available.</p>
+{% endif %}
